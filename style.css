@@ -1,0 +1,144 @@
+:root {
+  --Dark-Text: hsl(229, 25%, 31%);
+  --Score-Text: hsl(229, 64%, 46%);
+  --Header-Outline: hsl(217, 16%, 45%);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  background: radial-gradient(
+    at top,
+    rgba(31, 55, 86, 1) 0%,
+    rgba(20, 21, 57, 1) 100%
+  );
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.score-container {
+  max-height: 130px;
+  display: flex;
+
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50vw;
+  max-width: 700px;
+  min-width: 400px;
+  margin: 50px auto;
+  border: 3px solid var(--Header-Outline);
+  border-radius: 15px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  color: white;
+  font-size: 2rem;
+  line-height: 1.6563rem;
+}
+
+.score-item {
+  margin: 12px 30px;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px 40px;
+}
+
+#score {
+  color: var(--Dark-Text);
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+#score-title {
+  color: var(--Score-Text);
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+}
+
+.circle {
+  width: 198px;
+  height: 198px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 7px;
+}
+
+.mid-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 152px;
+  height: 152px;
+  background-color: rgb(225, 225, 225);
+  box-shadow: 0 -7px 0 1px rgb(185, 190, 210);
+  border-radius: 50%;
+}
+
+.hands {
+  height: 90px;
+}
+
+#sccisors-circle {
+  background-color: hsl(40, 84%, 53%);
+  box-shadow: 0px 9px 1px rgb(190, 109, 30);
+  position: absolute;
+  left: 190px;
+  top: -90px;
+}
+
+#rock-circle {
+  background-color: hsl(349, 70%, 56%);
+  box-shadow: 0 9px 1px hsl(349, 65%, 41%);
+  position: absolute;
+  top: 140px;
+  left: 56px;
+}
+
+#paper-circle {
+  background-color: hsl(230, 89%, 65%);
+  box-shadow: 0 9px 1px hsl(230, 62%, 53%);
+  position: absolute;
+  left: -80px;
+  top: -90px;
+}
+
+.choice3-container {
+  position: relative;
+  margin-top: 100px;
+}
+
+#rules-btn {
+  align-self: flex-end;
+  margin: 30px;
+  color: white;
+  letter-spacing: 0.2rem;
+  background-color: transparent;
+  border: 2px solid var(--Header-Outline);
+  border-radius: 10px;
+  padding: 10px 35px;
+}
