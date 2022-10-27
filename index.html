@@ -39,35 +39,84 @@
             alt="triangle background"
           />
         </div>
-        <div class="circle" id="sccisors-circle">
-          <div class="mid-circle">
-            <img
-              class="hands"
-              src="./images/icon-scissors.svg"
-              alt="hand sign scissors"
-            />
+        <div class="choices">
+          <div id="line1">
+            <div class="circle" id="paper-circle">
+              <div class="mid-circle">
+                <img
+                  class="hands"
+                  src="./images/icon-paper.svg"
+                  alt="hand sign paper"
+                />
+              </div>
+            </div>
+            <div class="circle" id="sccisors-circle">
+              <div class="mid-circle">
+                <img
+                  class="hands"
+                  src="./images/icon-scissors.svg"
+                  alt="hand sign scissors"
+                />
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="circle" id="rock-circle">
-          <div class="mid-circle">
-            <img
-              class="hands"
-              src="./images/icon-rock.svg"
-              alt="hand sign rock"
-            />
-          </div>
-        </div>
-        <div class="circle" id="paper-circle">
-          <div class="mid-circle">
-            <img
-              class="hands"
-              src="./images/icon-paper.svg"
-              alt="hand sign paper"
-            />
+          <div id="line2">
+            <div class="circle" id="rock-circle">
+              <div class="mid-circle">
+                <img
+                  class="hands"
+                  src="./images/icon-rock.svg"
+                  alt="hand sign rock"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <button id="rules-btn">RULES</button>
+      <div class="playground">
+        <div class="player">
+          <h3>YOU PICKED</h3>
+          <div class="ground" id="selected">
+            <div id="win-wave" class="animation-win"></div>
+            <div
+              class="circle circle-position bigger-circle"
+              id="sccisors-circle"
+            >
+              <div class="mid-circle bigger-mid">
+                <img
+                  class="hands"
+                  src="./images/icon-scissors.svg"
+                  alt="hand sign scissors"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="result lose">
+          <div class="title">YOU LOSE</div>
+          <button id="play-again">PLAY AGAIN</button>
+        </div>
+        <div class="result win">
+          <div id="win" class="title">YOU WIN</div>
+          <button id="play-again">PLAY AGAIN</button>
+        </div>
+        <div class="player">
+          <h3>THE HOUSE PICKED</h3>
+
+          <div class="ground" id="random">
+            <div id="lose-wave" class="animation-lose"></div>
+            <div class="circle circle-position bigger-circle" id="rock-circle">
+              <div class="mid-circle bigger-mid">
+                <img
+                  class="hands"
+                  src="./images/icon-rock.svg"
+                  alt="hand sign rock"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="modal">
         <div class="rules">
           <h2 class="title rules-title">RULES</h2>
@@ -80,6 +129,7 @@
           />
         </div>
       </div>
+      <button id="rules-btn">RULES</button>
     </main>
     <script src="./script.js"></script>
   </body>

@@ -18,8 +18,8 @@ body {
 .container {
   background: radial-gradient(
     at top,
-    rgba(31, 55, 86, 1) 0%,
-    rgba(20, 21, 57, 1) 100%
+    rgba(31, 55, 86, 1) 40%,
+    rgb(25, 27, 66) 80%
   );
   height: 100vh;
   display: flex;
@@ -31,14 +31,12 @@ body {
 .score-container {
   max-height: 130px;
   display: flex;
-
   flex-direction: row;
   justify-content: space-between;
-
   width: 50vw;
   max-width: 700px;
   min-width: 400px;
-  margin: 50px auto;
+  margin: 38px auto;
   border: 3px solid var(--Header-Outline);
   border-radius: 15px;
 }
@@ -106,42 +104,60 @@ body {
 
 #sccisors-circle {
   background-color: hsl(40, 84%, 53%);
-  box-shadow: 0px 9px 1px rgb(190, 109, 30);
-  position: absolute;
-  left: 190px;
-  top: -90px;
+  box-shadow: 0px 12px 1px rgb(190, 109, 30);
 }
 
 #rock-circle {
   background-color: hsl(349, 70%, 56%);
-  box-shadow: 0 9px 1px hsl(349, 65%, 41%);
-  position: absolute;
-  top: 140px;
-  left: 56px;
+  box-shadow: 0 12px 1px hsl(349, 65%, 41%);
 }
 
 #paper-circle {
   background-color: hsl(230, 89%, 65%);
-  box-shadow: 0 9px 1px hsl(230, 62%, 53%);
-  position: absolute;
-  left: -80px;
-  top: -90px;
+  box-shadow: 0 12px 1px hsl(230, 62%, 53%);
 }
 
 .choice3-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
   position: relative;
   margin-top: 100px;
+  width: 50vw;
+  max-width: 700px;
+  min-width: 400px;
+}
+
+.choices {
+  position: absolute;
+  width: 50vw;
+  max-width: 700px;
+  min-width: 400px;
+}
+
+#line1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+#line2 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 #rules-btn {
   align-self: flex-end;
-  margin: 30px;
+  margin: auto 30px 30px;
   color: white;
   letter-spacing: 0.2rem;
   background-color: transparent;
   border: 2px solid var(--Header-Outline);
   border-radius: 10px;
   padding: 10px 35px;
+  cursor: pointer;
 }
 
 .modal {
@@ -158,6 +174,7 @@ body {
   transform: scale(1.15);
   transition: transform 0.1s cubic-bezier(0.465, 0.183, 0.153, 0.946),
     opacity 0.1s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+  z-index: 2;
 }
 
 .modal.visible {
@@ -185,4 +202,169 @@ body {
   position: absolute;
   top: 30px;
   right: 20px;
+  cursor: pointer;
+}
+
+.playground {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  letter-spacing: 0.2rem;
+  width: 60vw;
+  height: 100vh;
+  max-width: 700px;
+  min-width: 400px;
+}
+
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.ground {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  margin: 50px 0 100px;
+  background-color: rgb(26, 29, 71);
+}
+
+.circle-position {
+  position: absolute;
+  top: -20px;
+  left: -30px;
+}
+
+.bigger-circle {
+  width: 220px;
+  height: 220px;
+}
+
+.bigger-mid {
+  width: 170px;
+  height: 170px;
+}
+
+.result {
+  margin: auto 75px;
+}
+
+.win {
+  display: none;
+}
+
+.lose {
+  display: block;
+}
+
+#play-again {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 17px;
+  border: none;
+  z-index: 1;
+  cursor: pointer;
+}
+
+#play-again:hover {
+  color: hsl(349, 70%, 56%);
+}
+
+/* Wave circle effect */
+.animation-lose {
+  position: absolute;
+  margin: auto;
+  bottom: 0px;
+  top: 20%;
+  left: 50%;
+  overflow: hidden;
+  transform: translate(-50%, 0);
+  width: 200px;
+  height: 200px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  animation-name: wave;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  z-index: 0;
+}
+
+.animation-win {
+  position: absolute;
+  margin: auto;
+  bottom: 0px;
+  top: 20%;
+  left: 50%;
+  overflow: hidden;
+  transform: translate(-50%, 0);
+  width: 200px;
+  height: 200px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  animation-name: wave;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  z-index: 0;
+}
+
+@keyframes wave {
+  0% {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(255, 255, 255, 0.9);
+  }
+  12.5% {
+    width: 225px;
+    height: 225px;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  25% {
+    width: 250px;
+    height: 250px;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+
+  37.5% {
+    width: 275px;
+    height: 275px;
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+
+  50% {
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  62.5% {
+    width: 325px;
+    height: 325px;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+
+  75% {
+    width: 350px;
+    height: 350px;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  87.5% {
+    width: 375px;
+    height: 375px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  100% {
+    width: 450px;
+    height: 450px;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 }
