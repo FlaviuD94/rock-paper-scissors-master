@@ -7,31 +7,35 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./images/favicon-32x32.png"
+      href="./images/rock-paper-scissors.png"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,600;0,700;1,400&family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&family=Outfit:wght@400;700&family=Overpass:wght@400;700&family=Space+Grotesk:wght@500&display=swap"
       rel="stylesheet"
     />
 
-    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+    <title>Rock, Paper, Scissors</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <main class="container">
       <header class="score-container">
-        <div class="score-item title">
+        <div class="score">
+          <div class="score-title">SCORE</div>
+          <div id="score-home"></div>
+        </div>
+        <div class="title">
           <div>ROCK</div>
           <div>PAPER</div>
           <div>SCISSORS</div>
         </div>
-        <div class="score score-item">
-          <div id="score-title">SCORE</div>
-          <div id="score">12</div>
+        <div class="score">
+          <div class="score-title">SCORE</div>
+          <div id="score-away"></div>
         </div>
       </header>
 
-      <div class="choice3-container">
+      <div class="choice3-container flex">
         <div class="triangle-container">
           <img
             id="triangle"
@@ -41,7 +45,7 @@
         </div>
         <div class="choices">
           <div id="line1">
-            <div class="circle" id="paper-circle">
+            <div class="circle paper-circle" id="paper-circle">
               <div class="mid-circle">
                 <img
                   class="hands"
@@ -50,7 +54,7 @@
                 />
               </div>
             </div>
-            <div class="circle" id="sccisors-circle">
+            <div class="circle sccisors-circle" id="sccisors-circle">
               <div class="mid-circle">
                 <img
                   class="hands"
@@ -61,7 +65,7 @@
             </div>
           </div>
           <div id="line2">
-            <div class="circle" id="rock-circle">
+            <div class="circle rock-circle" id="rock-circle">
               <div class="mid-circle">
                 <img
                   class="hands"
@@ -73,45 +77,76 @@
           </div>
         </div>
       </div>
-      <div class="playground">
+      <div class="playground hide">
         <div class="player">
           <h3>YOU PICKED</h3>
-          <div class="ground" id="selected">
-            <div id="win-wave" class="animation-win"></div>
+          <div class="ground">
+            <div id="win-wave" class="animation-win hide"></div>
             <div
-              class="circle circle-position bigger-circle"
-              id="sccisors-circle"
+              class="circle circle-position bigger-circle paper-circle selected-animation hide"
+              id="paper-circle-selected"
             >
               <div class="mid-circle bigger-mid">
-                <img
-                  class="hands"
-                  src="./images/icon-scissors.svg"
-                  alt="hand sign scissors"
-                />
+                <img class="hands" src="./images/icon-paper.svg" />
+              </div>
+            </div>
+            <div
+              class="circle circle-position bigger-circle rock-circle selected-animation hide"
+              id="rock-circle-selected"
+            >
+              <div class="mid-circle bigger-mid">
+                <img class="hands" src="./images/icon-rock.svg" />
+              </div>
+            </div>
+            <div
+              class="circle circle-position bigger-circle sccisors-circle selected-animation hide"
+              id="sccisors-circle-selected"
+            >
+              <div class="mid-circle bigger-mid">
+                <img class="hands" src="./images/icon-scissors.svg" />
               </div>
             </div>
           </div>
         </div>
-        <div class="result lose">
+        <div id="lose" class="result hide">
           <div class="title">YOU LOSE</div>
-          <button id="play-again">PLAY AGAIN</button>
+          <button class="play-again">PLAY AGAIN</button>
         </div>
-        <div class="result win">
-          <div id="win" class="title">YOU WIN</div>
-          <button id="play-again">PLAY AGAIN</button>
+        <div id="draw" class="result hide">
+          <div class="title">DRAW</div>
+          <button class="play-again">PLAY AGAIN</button>
+        </div>
+        <div id="win" class="result hide">
+          <div class="title">YOU WIN</div>
+          <button class="play-again">PLAY AGAIN</button>
         </div>
         <div class="player">
           <h3>THE HOUSE PICKED</h3>
 
           <div class="ground" id="random">
-            <div id="lose-wave" class="animation-lose"></div>
-            <div class="circle circle-position bigger-circle" id="rock-circle">
+            <div id="lose-wave" class="animation-lose hide"></div>
+            <div
+              class="circle circle-position bigger-circle paper-circle random-animation hide"
+              id="paper-circle-random"
+            >
               <div class="mid-circle bigger-mid">
-                <img
-                  class="hands"
-                  src="./images/icon-rock.svg"
-                  alt="hand sign rock"
-                />
+                <img class="hands" src="./images/icon-paper.svg" />
+              </div>
+            </div>
+            <div
+              class="circle circle-position bigger-circle rock-circle random-animation hide"
+              id="rock-circle-random"
+            >
+              <div class="mid-circle bigger-mid">
+                <img class="hands" src="./images/icon-rock.svg" />
+              </div>
+            </div>
+            <div
+              class="circle circle-position bigger-circle sccisors-circle random-animation hide"
+              id="sccisors-circle-random"
+            >
+              <div class="mid-circle bigger-mid">
+                <img class="hands" src="./images/icon-scissors.svg" />
               </div>
             </div>
           </div>
