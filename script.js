@@ -20,6 +20,8 @@ const homeScore = document.querySelector("#score-home");
 const loseBtn = document.querySelector("#lose");
 const drawBtn = document.querySelector("#draw");
 const winBtn = document.querySelector("#win");
+const randomGround = document.querySelector("#lose-wave");
+const selectedGround = document.querySelector("#win-wave");
 
 const modal = document.querySelector(".modal");
 
@@ -47,10 +49,12 @@ function resetGame() {
   selectedPaper.classList.add("hide");
   selectedRock.classList.add("hide");
   selectedSccisors.classList.add("hide");
-
   drawBtn.classList.remove("display");
   loseBtn.classList.remove("display");
   winBtn.classList.remove("display");
+  selectedGround.classList.add("hide");
+  randomGround.classList.add("hide");
+
   updateScore();
   randomPick();
 }
@@ -126,31 +130,42 @@ function declareWinner(e) {
   if (selection === 0 && random === 1) {
     //Win
     winBtn.classList.add("display");
+    selectedGround.classList.remove("hide");
     scoreHome += 3;
   }
   if (selection === 0 && random === 2) {
     //Lose
     loseBtn.classList.add("display");
+    randomGround.classList.remove("hide");
+
     scoreAway += 3;
   }
   if (selection === 1 && random === 2) {
     //Win
     winBtn.classList.add("display");
+    selectedGround.classList.remove("hide");
+
     scoreHome += 3;
   }
   if (selection === 1 && random === 0) {
     //Lose
     loseBtn.classList.add("display");
+    randomGround.classList.remove("hide");
+
     scoreAway += 3;
   }
   if (selection === 2 && random === 0) {
     //Win
     winBtn.classList.add("display");
+    selectedGround.classList.remove("hide");
+
     scoreHome += 3;
   }
   if (selection === 2 && random === 1) {
     //Lose
     loseBtn.classList.add("display");
+    randomGround.classList.remove("hide");
+
     scoreAway += 3;
   }
 }
